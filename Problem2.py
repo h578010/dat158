@@ -26,6 +26,10 @@ def boyer_moore(text, pattern):
 			j = p - 1
 	return "No match."
 
-haystack = "abcdefghijklmnopqrstuvwxyz"
-needle = "ghi"
-print(boyer_moore(haystack, needle))
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+sample1 = "wxyz"
+sample2 = "ghi"
+sample3 = "klm"
+print(boyer_moore(alphabet, sample1))
+print(boyer_moore(alphabet, sample2))
+print(boyer_moore(alphabet, sample3))

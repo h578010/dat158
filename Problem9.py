@@ -25,7 +25,7 @@ def dyn_lcs(X, Y):
                     L[i][j] = max(L[i-1][j], L[i][j-1])
     return L[m][n]
 
-X = "babbabab"
-Y = "bbabbaaab"
-print ("Length of LCS is ", dyn_lcs(X, Y))
-# print ("Length of LCS is ", rec_lcs(X, Y, len(X), len(Y)))
+X = "pneumonoultramicroscopicsilicovolcanoconiosis"
+Y = "bbabbaaabpneumonoultramicroscopicsilicovolcanoconiosis"
+print ("Dynamic: Length of LCS is ", dyn_lcs(X, Y))
+print ("Recursive: Length of LCS is ", rec_lcs(X, Y, len(X), len(Y)))
