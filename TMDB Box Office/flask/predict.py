@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 import math
 
-model = joblib.load('../boxoffice_model.joblib')
+model = joblib.load('./boxoffice_model.joblib')
 
 def preprocess(data):
 
