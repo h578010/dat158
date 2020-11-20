@@ -54,7 +54,7 @@ def postprocess(prediction):
         pass
 
     pred = math.expm1(pred)
-    pred = str(pred)
+    pred = str(int(pred))
 
     return_dict = {'pred': pred}
 

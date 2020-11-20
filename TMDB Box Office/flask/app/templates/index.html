@@ -1,35 +1,37 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}HospitalApp{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='mystyle.css')}}">
+{% endblock %}
+
+{% block title %}MovieRevenueApp{% endblock %}
 
 {% block navbar %}
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ url_for('index') }}">MovieRevenueApp</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('dashboard') }}">Data dashboard</a></li>
-            </ul>
-        </div>
+<nav class="navbar navbar-light navbar-custom" style="background-color:#304FFE; color:white;">
+    <div class="navbar-header">
+        <button type="button" name="btn" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ url_for('index') }}">Movie revenue prediction</a>
     </div>
-</div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+        </ul>
+    </div>
+</nav>
 {% endblock %}
 
 
 {% block content %}
 
 <div class='container'>
-    <p>Predict a movies's revenue by filling out the below information. The data is fed to a 
+    <p>Predict a movies's revenue by filling out the below information. The data is fed to a
         machine learning model trained on historical data.</p>
 </div>
 
@@ -40,7 +42,7 @@
 <div class='container'>
 
     <h3>{% if session.get('pred') %} The predicted revenue of the movie is {{session.get('pred')['pred']}} dollars.</h3>
-        {% else %} {% endif %}
+    {% else %} {% endif %}
     <br>
     <h4>User information: {{session.get('user_info')}}</h4>
 
